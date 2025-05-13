@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Portfolio</title>
+</head>
+<body>
+    <h1>Mis Proyectos</h1>
+    {% for proyecto in proyectos %}
+        <div>
+            <h2>{{ proyecto.titulo }}</h2>
+            <p>{{ proyecto.descripcion }}</p>
+            {% if proyecto.link %}
+                <a href="{{ proyecto.link }}" target="_blank">Ver más</a>
+            {% endif %}
+            {% if proyecto.imagen %}
+                <img src="{{ proyecto.imagen.url }}" width="300">
+            {% endif %}
+        </div>
+        <hr>
+    {% endfor %}
+</body>
+</html>

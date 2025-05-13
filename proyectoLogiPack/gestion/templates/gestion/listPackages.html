@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css')}}">
+ <h1>Comentarios registrados </h1>
+      <hr/>
+      <table>
+         <thead>
+            <tr>
+               <th>Nombre</th>
+               <th>Direccion</th>  
+               <th>Peso</th>              
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for paquete in paquetes %}
+               <tr>
+                  <td>{{ paquete.nomdestinatario }}</td>
+                  <td>{{ paquete.dirdestinatario }}</td>
+				  <td>{{ paquete.peso }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>	  
+      <br><br>
+      </div>
+

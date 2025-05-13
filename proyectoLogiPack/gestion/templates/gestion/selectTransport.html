@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css')}}">
+        <h1>Salida de Transporte</h1>
+        <body>
+            <h3>Elija una Sucursal</h3>
+            <form action = "http://127.0.0.1:5000/SeleccionarTransporte" method = "POST">
+                <label for = "sucursales">Sucursales</label> <br>
+                <select id = "sucursales" name = "sucursales" widht = "600px">
+                    {% for sucursal in sucursales %}
+                    <option value = "{{ sucursal.id }}">{{ sucursal.numero}}, {{sucursal.provincia}}, {{ sucursal.localidad}}</option>
+                    {% endfor %}
+                </select>
+                <br><br>
+                <label for = "paquetes">Paquetes</label><br>
+                <ul>
+                    {% for paquete in paquetes %}
+                        <li>
+                            <input type = "checkbox" name = "paquetes_selec[]" value = "{{ paquete.id }}">
+                            Numero de envío: {{paquete.numeroenvio}}   Dirección: {{paquete.dirdestinatario}}
+                        </li>
+                    {% endfor %}
+                </ul>
+                <br><br>
+                <input class = "button1" type = "submit" value = "Registrar Transporte">
+                <br><br>
+            </form>
+            
+        </body>
+    </head>
+</html>
+
+
+

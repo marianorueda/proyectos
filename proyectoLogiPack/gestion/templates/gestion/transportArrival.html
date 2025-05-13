@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css')}}">
+        <h2>LLegada de Transporte</h2>
+        <body>
+            <form action = "http://127.0.0.1:5000/LlegadaTransporte" method = "POST">
+                <label for = "Transportes">Transportes</label> <br>
+                <select id = "Transportes" name = "Transportes" widht = "600px">
+                    {% for transporte in Transportes %}
+                        <option value = "{{ transporte.id }}">{{ transporte.numerotransporte}}, {{transporte.fechahorasalida}}</option>
+                    {% endfor %}
+                </select>
+                <input class = "button1" type = "submit" value = "Registrar Llegada de Transporte">
+                <br><br>
+            </form>  
+        </body>
+    </head>
+</html>

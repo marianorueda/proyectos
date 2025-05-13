@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css')}}">
+        <h1>Bienvenido a la app de LogiPack</h1>
+        <body>
+            <h3>Elija una Sucursal</h3>
+            <form action = "http://127.0.0.1:5000/Opciones" method = "POST">
+                <label for = "sucursales">Sucursales</label> <br>
+                <select id = "sucursales" name = "sucursales" widht = "600px">
+                    {% for sucursal in sucursales %}
+                        <option value = "{{ sucursal.id }}">{{ sucursal.numero}}, {{ sucursal.provincia}}, {{ sucursal.localidad}}</option>
+                    {% endfor %}
+                </select>
+
+                <br><br>
+
+                <input class = "button1" type = "submit" value = "Seleccionar sucursal">
+                <br><br>
+            </form>
+            
+        </body>
+    </head>
+</html>

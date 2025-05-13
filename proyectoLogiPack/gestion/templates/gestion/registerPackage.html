@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css')}}">
+        <h2>Ingrese Datos del paquete</h2>
+        <body>
+            <form action = "http://127.0.0.1:5000/RegistrarPaquete" method = "POST">
+                <label for = "peso">Peso</label> <br>
+                <input type="text" name = peso placeholder = "Peso"> <br>
+                <label for = "nomdestinatario">Nombre</label> <br>
+                <input type="text" name = nomdestinatario placeholder = "Nombre"> <br>
+                <label for = "dirdestinatario">Direccion</label> <br>
+                <input type="text" name = dirdestinatario placeholder = "Direccion"> <br>
+                <label for = "observaciones">Observaciones</label> <br>
+                <br><br>
+                
+                <input class = "button1" type = "submit" value = "Registrar Paquete">
+                <br><br>
+            </form>
+            
+        </body>
+    </head>
+</html>
