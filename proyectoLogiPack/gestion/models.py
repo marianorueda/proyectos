@@ -15,7 +15,7 @@ class Sucursal(models.Model):
 class Transporte(models.Model):
     numerotransporte = models.IntegerField(unique=True)
     fechahorasalida = models.DateTimeField()
-    fechahorallegada = models.DateTimeField()
+    fechahorallegada = models.DateTimeField(null=True, blank=True)
     sucursal = models.ForeignKey(Sucursal, on_delete=models.CASCADE, related_name='transportes')
 
     def __str__(self):

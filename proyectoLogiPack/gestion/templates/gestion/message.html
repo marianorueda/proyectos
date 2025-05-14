@@ -1,10 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css')}}">
+<html lang="es">
+    <head>
+        <link rel="stylesheet" href="{% static 'gestion/estilos.css' %}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
     <body>
         <h1>{{ aviso }}</h1>
         <ul>
-            <li><a href = "{{ url_for('inicio') }}">Volver al inicio</a></li>
+            <li><a href="{% url 'index' %}">Volver al inicio</a></li>
         </ul>
     </body>
 </html>

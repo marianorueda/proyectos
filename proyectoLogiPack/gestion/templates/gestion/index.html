@@ -1,24 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css')}}">
+        <link rel="stylesheet" href="{% static 'gestion/estilos.css' %}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>   
+    <body>
         <h1>Bienvenido a la app de LogiPack</h1>
-        <body>
-            <h3>Elija una Sucursal</h3>
-            <form action = "http://127.0.0.1:5000/Opciones" method = "POST">
-                <label for = "sucursales">Sucursales</label> <br>
-                <select id = "sucursales" name = "sucursales" widht = "600px">
-                    {% for sucursal in sucursales %}
-                        <option value = "{{ sucursal.id }}">{{ sucursal.numero}}, {{ sucursal.provincia}}, {{ sucursal.localidad}}</option>
-                    {% endfor %}
-                </select>
-
-                <br><br>
-
-                <input class = "button1" type = "submit" value = "Seleccionar sucursal">
-                <br><br>
-            </form>
-            
+        <h3>Elija una Sucursal</h3>
+        <form action = "http://127.0.0.1:8000/options/" method = "POST">
+            {% csrf_token %}
+            <label for = "sucursales">Sucursales</label> <br>
+            <select id = "sucursales" name = "sucursales" widht = "600px">
+                <option value = "">-- Seleccione una sucursal --</option>
+                {% for sucursal in sucursales %}
+                    <option value = "{{ sucursal.id }}">{{ sucursal.numero}}, {{ sucursal.provincia}}, {{ sucursal.localidad}}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <input class = "button1" type = "submit" value = "Seleccionar sucursal">
+            <br><br>
+        </form>
+                
         </body>
-    </head>
+        {% if error %}
+            <p class="error-message">{{ error }}</p>
+        {% endif %} 
 </html>

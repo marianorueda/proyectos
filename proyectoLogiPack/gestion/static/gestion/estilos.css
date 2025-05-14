@@ -1,0 +1,99 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f1f1;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    text-align: center;
+}
+
+h1 {
+    color: #b30000;
+    text-align: center;
+    margin-top: 50px;
+}
+
+h3 {
+    color: #cc0000;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.vuelta {
+    color: #000089;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.error-message {
+    text-align: center;
+    color: #b00020;
+    font-weight: bold;
+    background-color: #ffe6e6;
+    padding: 10px;
+    margin: 10px;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #e8e5e5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 16px;
+    color: #990000;
+}
+
+select {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #cc0000;
+    border-radius: 5px;
+}
+
+.button1 {
+    width: 100%;
+    background-color: #e60000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.button1:hover {
+    background-color: #cc0000;
+}
+
+br {
+    margin-bottom: 10px;
+}
+
+.redi {
+    margin-top: 10px;
+    color: #2d303c;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 7px 10px;
+    border: 2px solid #0f00e6;
+    border-radius: 3px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.redi:hover {
+    background-color: #0f00e6;
+    color: #ffffff;
+}

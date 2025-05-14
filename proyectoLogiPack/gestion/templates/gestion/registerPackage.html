@@ -1,23 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css')}}">
-        <h2>Ingrese Datos del paquete</h2>
-        <body>
-            <form action = "http://127.0.0.1:5000/RegistrarPaquete" method = "POST">
-                <label for = "peso">Peso</label> <br>
-                <input type="text" name = peso placeholder = "Peso"> <br>
-                <label for = "nomdestinatario">Nombre</label> <br>
-                <input type="text" name = nomdestinatario placeholder = "Nombre"> <br>
-                <label for = "dirdestinatario">Direccion</label> <br>
-                <input type="text" name = dirdestinatario placeholder = "Direccion"> <br>
-                <label for = "observaciones">Observaciones</label> <br>
-                <br><br>
-                
-                <input class = "button1" type = "submit" value = "Registrar Paquete">
-                <br><br>
-            </form>
-            
-        </body>
+        <link rel="stylesheet" href="{% static 'gestion/estilos.css' %}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+        <body>
+            <h1>Ingrese Datos del paquete</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Registrar Paquete">
+        </form>
+        <div>
+            <h3 class="vuelta">Sucursal Actual: {{ sucursal.numero}}, {{sucursal.provincia}}, {{ sucursal.localidad}}</h3>
+            <a class="redi" href="{% url 'index' %}">Cambiar Sucursal</a>
+        </div>   
+        </body>
 </html>

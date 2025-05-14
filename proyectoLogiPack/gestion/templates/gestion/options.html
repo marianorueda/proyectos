@@ -1,14 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
-        <link rel="stylesheet" type="text/css" href="styles2.css">
-        <h1>  Seleccione Opcion</h1>
-        <body>
-            <ul>
-                <li><a href = "{{ url_for('RegistrarPaquete') }}"> Registrar Pedido</a></li>
-                <li><a href = "{{ url_for('SeleccionarTransporte') }}"> Salida de Transporte</a></li>
-                <li><a href = "{{ url_for('LlegadaTransporte') }}"> Llegada Transporte</a></li>
-            </ul>
-        </body>
+        <link rel="stylesheet" href="{% static 'gestion/estilosOptions.css' %}">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+        <body>
+            <h2>  Seleccione Opcion</h2>
+            <ul>
+                <li><a href = "{% url 'registerPackage' %}" method = "POST"> Registrar Pedido</a></li>
+                <li><a href = "{% url 'selectTransport' %}"> Salida de Transporte</a></li>
+                <li><a href = "{% url 'transportArrival' %}"> Llegada Transporte</a></li>
+            </ul>
+            <div>
+                <h3 class="vuelta">Sucursal Actual: {{ sucursal.numero}}, {{sucursal.provincia}}, {{ sucursal.localidad}}</h3>
+                <a class="redi" href="{% url 'index' %}">Cambiar Sucursal</a>
+            </div>
+        </body>
 </html>
